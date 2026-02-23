@@ -1,0 +1,25 @@
+mcp_servers:
+  searching:
+    transport: stdio
+    command: "python"
+    args: ["-m", "src.tool.mcp_servers.searching_mcp_server"]
+    timeout_sec: 30
+    retries: 2
+    enabled: true
+    fallback: "duckduckgo"
+  browser:
+    transport: stdio
+    command: "python"
+    args: ["-m", "src.tool.mcp_servers.browser_session"]
+    timeout_sec: 60
+    retries: 1
+    enabled: true
+    fallback: "simple_http"
+  reading:
+    transport: stdio
+    command: "python"
+    args: ["-m", "src.tool.mcp_servers.reading_mcp_server"]
+    timeout_sec: 45
+    retries: 1
+    enabled: true
+
